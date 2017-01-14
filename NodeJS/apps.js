@@ -35,7 +35,7 @@ app.get('/api/GetTemp', function(req, res) {
     //http://temp.haydut.xyz/api/GetTemp?GetTempToken=xxx
     var GetTempToken = req.param('GetTempToken');
     if (GetTempToken == "xxx") {
-        db.all('SELECT value,time FROM TBL_Temp ORDER BY time DESC LIMIT 60', function(err, row) {
+        db.all('SELECT value,time FROM TBL_Temp ORDER BY id DESC LIMIT 60', function(err, row) {
             if (err !== null) {
                 next(err);
             } else {
